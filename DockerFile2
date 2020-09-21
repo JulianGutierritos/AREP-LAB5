@@ -1,0 +1,11 @@
+FROM openjdk:8
+ 
+WORKDIR /usrbal/bin
+ 
+ENV PORT 6000
+ 
+COPY /target/classes /usrbal/bin/classes
+
+COPY /target/dependency /usrbal/bin/dependency
+ 
+CMD ["java","-cp","./classes:./dependency/*","edu.eci.arep.Main"]

@@ -1,0 +1,69 @@
+version: '2'
+services:
+    balanceador:
+        image: juliangutierrez/sparkdocker_balanceador
+        build:
+            context: .
+            dockerfile: DockerFile2
+        container_name: balanceador
+        networks:
+            net:
+                ipv4_address: 100.14.0.6
+        ports:
+            - "35004:6000"
+    app1:
+        image: juliangutierrez/sparkdocker_app
+        build:
+            context: .
+            dockerfile: DockerFile
+        container_name: app1
+        networks:
+            net:
+                ipv4_address: 100.14.0.2
+        ports:
+            - "35001:6000"
+    app2:
+        image: juliangutierrez/sparkdocker_app
+        build:
+            context: .
+            dockerfile: DockerFile
+        container_name: app2
+        networks:
+            net:
+              ipv4_address: 100.14.0.3
+        ports:
+            - "35002:6000"
+    app3:
+        image: juliangutierrez/sparkdocker_app
+        build:
+            context: .
+            dockerfile: DockerFile
+        container_name: app3
+        networks:
+            net:
+                ipv4_address: 100.14.0.4
+        ports:
+            - "35003:6000"
+    db:
+        image: mongo:3.6.1
+        container_name: db
+        environment:
+            MONGO_INITDB_DATABASE: arep
+        networks:
+            net:
+                ipv4_address: 100.14.0.5
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongodb:/data/db
+            - mongodb_config:/data/configdb
+        command: mongod
+networks:
+    net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 100.14.0.0/8
+volumes:
+    mongodb:
+    mongodb_config:

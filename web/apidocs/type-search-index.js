@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.eci.arep.modelo","l":"Log"},{"p":"edu.eci.arep.service","l":"LogService"},{"p":"edu.eci.arep.service.impl","l":"LogServiceMongo"},{"p":"edu.eci.arep","l":"Main"},{"p":"edu.eci.arep.modelo","l":"Usuario"}]
