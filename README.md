@@ -6,7 +6,7 @@ http://54.152.36.40:35004/
 
 ## Despliegue CircleCi ##
 
-[![CircleCI](https://circleci.com/gh/JulianGutierritos/AREP-LAB3.svg?style=svg)](https://app.circleci.com/pipelines/github/JulianGutierritos/AREP-LAB3)
+[![CircleCI](https://circleci.com/gh/JulianGutierritos/AREP-LAB5.svg?style=svg)](https://app.circleci.com/pipelines/github/JulianGutierritos/AREP-LAB5)
 
 ## Prerrequisitos ##
 
